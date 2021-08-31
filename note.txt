@@ -1,0 +1,56 @@
+selenium.common.exceptions.TimeoutException
+
+    except selenium.common.exceptions.TimeoutException:
+        print("failed to locate ask to join button")
+        join_button = wait.until(EC.visibility_of_element_located((By.XPATH, xpath["join_button"])))
+        action_3 = ActionChains(driver)
+        action_3.move_to_element(join_button).click().perform()
+
+
+DISMISS BUTTON CODE (USE IF PREFS IS SET TO 2)
+dismiss_button = wait.until(EC.visibility_of_element_located((By.XPATH, xpath["dismiss_button"])))
+action_1 = ActionChains(driver)
+ction_1.move_to_element(dismiss_button).click().perform()
+
+OPENING NEW TAB SELINUIM
+driver.execute_script("window.open('https://www.google.com');")
+
+*****************************
+SWITCHING CONTROL IN SELENIUM TO A NEW TAB OPENED
+We can close the active/current tab without closing the browser in Selenium webdriver in Python. By default, Selenium has control over the parent window. Once another browser window is opened, we have to explicitly shift the control with the help of switch_to.window method.
+
+The handle id of the browser window where we want to shift is passed as a parameter to that method. The method window_handles returns the list of all window handle ids of the opened browsers.
+
+The method current_window_handle is used to hold the window handle id of the browser window in focus. To close only the active or current tab we have to use the close method.
+Syntax
+
+parent = driver.window_handles[0]
+chld = driver.window_handles[1]
+driver.switch_to.window(chld)
+driver.close()
+****************************
+DAEMON threads
+
+
+Some threads do background tasks, like sending keepalive packets, or performing periodic garbage collection, or whatever. These are only useful when the main program is running, and it's okay to kill them off once the other, non-daemon, threads have exited.
+
+Without daemon threads, you'd have to keep track of them, and tell them to exit, before your program can completely quit. By setting them as daemon threads, you can let them run and forget about them, and when your program quits, any daemon threads are killed automatically.
+
+
+https://meet.google.com/lookup/ay6bqb34ol?authuser=0&hs=179s
+https://meet.google.com/fha-actr-rqk
+
+
+C:\WINDOWS\system32>pip install SpeechRecognition
+Collecting SpeechRecognition
+  Using cached SpeechRecognition-3.8.1-py2.py3-none-any.whl (32.8 MB)
+Installing collected packages: SpeechRecognition
+Successfully installed SpeechRecognition-3.8.1
+
+
+        try:
+            dismiss_button = wait.until(ec.visibility_of_element_located((By.XPATH, self.xpath["dismiss_button"])))
+            action_1 = ActionChains(driver)
+            action_1.move_to_element(dismiss_button).click().perform()
+        except selenium.common.exceptions.TimeoutException:
+            pass
